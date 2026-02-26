@@ -1,0 +1,446 @@
+/***************** default ******************/
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style: none;}
+a{
+    text-decoration: none;
+    display: block;
+}
+
+p, span, h3, h1, a{
+    color: #1F2933;
+}
+
+body{
+    font-family: 'SUIT Variable', sans-serif;
+}
+
+section {
+    min-height: 100vh;
+    padding: 170px 0 105px;
+    margin: 0 auto;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.title{
+    font-size: 54px;
+    font-weight: 600;
+    color: #6B7280;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.boxDetail{
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 20px;
+    box-shadow: 0 2px 20px 0 rgba(116, 170, 234, 0.5);
+}
+
+$ma10: 10px;
+$ma20: 20px;
+$main: #AED1FA;
+$point: #F2A65A;
+
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}
+
+/***************** effect_layer ******************/
+.effect_layer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    .circle{
+        position: absolute;
+        top: -1200px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $main;
+        @include size(2000px, 2000px);
+        border-radius: 50%;
+        transform-origin: 50% 1700px;
+        will-change: transform;
+    }
+}
+
+/***************** header ******************/
+.header{
+    @include size(1280px, 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    .header_title{
+        font-size: 24px;
+        font-weight: 600;
+        opacity: 0;
+    }
+    .gnb{
+        display: flex;
+        position: relative;
+        a{
+            z-index: 1;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            font-weight: 600;
+            margin-right: 20px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        .navPoint{
+            @include size(30px, 30px);
+            background-color: $point;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%) scale(0);
+            z-index: -1;
+        }
+    }
+}
+/***************** intro ******************/
+.intro{
+    @include size(1280px, 100vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    .intro_point{
+        position: absolute;
+        top: 280px;
+        left: 100px;
+        font-size: 200px;
+        font-weight: 600;
+        color: $main;
+        -webkit-text-stroke: 8px white;
+        paint-order: stroke fill;
+        font-family: 'Caveat';
+    }
+    .intro_title{
+        font-size: 45px;
+        z-index: 10;
+        .name{
+            font-size: 96px;
+            color: $point;
+        }
+    }
+    .down_arrow{
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        .arrow_img{
+            img{
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+/***************** profile ******************/
+.profile{
+    @include size(1280px, 100vh);
+    .profileFlex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        gap: 30px;
+        .profile_img{
+            width: 300px;
+            height: 300px;   
+            background-color: #ccc;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                @include size(100%, 100%);
+                
+            }
+        }
+        .infoBox{
+            .nameBox{
+                display: flex;
+                align-items: end;
+                margin-bottom: $ma20;
+                .name{
+                    font-size: 32px;
+                    font-weight: 600;
+                    margin-right: $ma20;
+                }
+                .sub{
+                    color: #6B7280;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+            .infoFlex{
+                display: flex;
+                gap: 20px;
+                margin-bottom: 20px;;
+                .infoDetail{
+                    @include size(367px, 207px);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    .textFlex{
+                        width: 300px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        font-size: 20px;
+                        .profileIcon{
+                            @include size(20px, 20px);
+                            img{
+                                @include size(100%, 100%);
+                                
+                            }
+                        }
+                        .github{
+                            text-decoration: underline
+                        }
+                    }
+                }
+                .infoRight{
+                    @include size(367px, 207px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    .subTitle{
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                    }
+                    .ma_bo{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        .aboutMe{
+            @include size(754px, 209px);
+            font-size: 20px;
+            padding: 42px 33px;
+            .point{
+                color: $point;
+                font-weight: 600;
+            }    
+            .ma_bo{
+                margin-bottom: $ma20;
+            }
+        }
+    }
+}
+/***************** skill ******************/
+.skill{
+    @include size(1280px, 100vh);
+    .skillFlex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-bottom: 40px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        .skillBox{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 20px;
+            .skillImg{
+                @include size(50px, 50px);
+                img{
+                    @include size(100%, 100%);
+                }
+            }
+        }
+    }
+}
+/***************** project ******************/
+.project{
+    width: 1280px;
+    .projectFlex{
+        @include size(1084px, 1146px);
+        margin: 40px auto 0;
+        display: flex;  
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 10px;
+        .projectBox{
+            @include size(522px, 552px);
+            padding: 40px 45px 40px 30px;
+            .projectName{
+                font-size: 30px;
+                font-weight: 600;
+                margin-bottom: $ma10;
+            }
+            .kioskMokupImg{
+                @include size(240px, 250px);
+                margin: 25px auto;
+                img{
+                    @include size(100%, 100%);
+                    display: block;
+                }
+            }
+            .mokupImg{
+                @include size(375px, 250px);
+                margin: 25px auto;
+                img{
+                    @include size(100%, 100%);
+                    display: block;
+                }
+            }
+            .toolFlex{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-top: 20px;
+                .toolBox{
+                    font-weight: 500;
+                    padding: 10px 12px;
+                    background-color: #F2A65A;
+                    border-radius: 10px;
+                    color: white;
+                }
+            }
+            .ma-top{
+                margin-top: 0px;
+            }
+        }
+        #projectBaskin,
+        #projectChae,
+        #projectroom,
+        #projectAir{
+            position: relative;
+            &:hover .projectOverlay{
+                opacity: 1;
+            }
+            .projectOverlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include size(522px, 552px);
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                transition: all 0.3s ease;
+                opacity: 0;
+                .modalBtnBox{
+                    .modalBtn{
+                        border: none;
+                        border-radius: 10px;
+                        background-color: $point;
+                        padding: 15px 20px;
+                        color: white;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                        >a{
+                            font-size: 14px;
+                            margin: 0;
+                            color: white;
+                        }
+                        &:hover{
+                            background-color: rgb(228, 141, 55);
+                            box-shadow: 0 2px 20px 0 rgba(242, 166, 90, 0.8);
+                            backdrop-filter: blur(4px);
+                        }
+                    }
+                }
+                >a{
+                    font-size: 18px;
+                    margin-top: 10px;
+                    color: rgb(34, 75, 253);
+                    text-decoration: underline
+                }
+            }
+        }
+    }
+}
+/***************** fin ******************/
+.fin{
+    @include size(1280px, 100vh);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    padding: 0;
+    .finTxt{
+        .fin_title{
+            font-size: 45px;
+            z-index: 10;
+            .name{
+                font-size: 96px;
+                color: $point;
+            }
+        }
+    }
+    .contactBox{
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 70px;
+        .contactTitle{
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .contactTxt{
+            font-size: 20px;
+        }
+    }
+}
+
+/***************** quickMenu ******************/
+.quickMenu{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    @include size(50px, 50px);
+    background-color: $point;
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &.quickActive{
+        opacity: 1;
+    }
+    .quickTop{
+        @include size(16px, 10px);
+        margin: 0 auto;
+        line-height: 50px;
+        img{
+            @include size(100%, 100%);
+            display: inline-block;
+        }
+    }
+    &:hover{
+        background-color: rgb(236, 189, 141);
+        box-shadow: 0 2px 20px 0 rgba(242, 166, 90, 0.5);
+        backdrop-filter: blur(4px);
+    }
+}

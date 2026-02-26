@@ -1,0 +1,481 @@
+/***************** default ******************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+p, span, h3, h1, a {
+  color: #1F2933;
+}
+
+body {
+  font-family: "SUIT Variable", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  padding: 170px 0 105px;
+  margin: 0 auto;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 54px;
+  font-weight: 600;
+  color: #6B7280;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.boxDetail {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 20px;
+  box-shadow: 0 2px 20px 0 rgba(116, 170, 234, 0.5);
+}
+
+/***************** effect_layer ******************/
+.effect_layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+.effect_layer .circle {
+  position: absolute;
+  top: -1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #AED1FA;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  transform-origin: 50% 1700px;
+  will-change: transform;
+}
+
+/***************** header ******************/
+.header {
+  width: 1280px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+.header .header_title {
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 0;
+}
+.header .gnb {
+  display: flex;
+  position: relative;
+}
+.header .gnb a {
+  z-index: 1;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.header .gnb a:last-child {
+  margin-right: 0;
+}
+.header .gnb .navPoint {
+  width: 30px;
+  height: 30px;
+  background-color: #F2A65A;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%) scale(0);
+  z-index: -1;
+}
+
+/***************** intro ******************/
+.intro {
+  width: 1280px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+.intro .intro_point {
+  position: absolute;
+  top: 280px;
+  left: 100px;
+  font-size: 200px;
+  font-weight: 600;
+  color: #AED1FA;
+  -webkit-text-stroke: 8px white;
+  paint-order: stroke fill;
+  font-family: "Caveat";
+}
+.intro .intro_title {
+  font-size: 45px;
+  z-index: 10;
+}
+.intro .intro_title .name {
+  font-size: 96px;
+  color: #F2A65A;
+}
+.intro .down_arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.intro .down_arrow .arrow_img img {
+  display: block;
+  margin: 0 auto;
+}
+
+/***************** profile ******************/
+.profile {
+  width: 1280px;
+  height: 100vh;
+}
+.profile .profileFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 30px;
+}
+.profile .profileFlex .profile_img {
+  width: 300px;
+  height: 300px;
+  background-color: #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile .profileFlex .profile_img img {
+  width: 100%;
+  height: 100%;
+}
+.profile .profileFlex .infoBox .nameBox {
+  display: flex;
+  align-items: end;
+  margin-bottom: 20px;
+}
+.profile .profileFlex .infoBox .nameBox .name {
+  font-size: 32px;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.profile .profileFlex .infoBox .nameBox .sub {
+  color: #6B7280;
+  font-size: 20px;
+  font-weight: 600;
+}
+.profile .profileFlex .infoBox .infoFlex {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.profile .profileFlex .infoBox .infoFlex .infoDetail {
+  width: 367px;
+  height: 207px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.profile .profileFlex .infoBox .infoFlex .infoDetail .textFlex {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+.profile .profileFlex .infoBox .infoFlex .infoDetail .textFlex .profileIcon {
+  width: 20px;
+  height: 20px;
+}
+.profile .profileFlex .infoBox .infoFlex .infoDetail .textFlex .profileIcon img {
+  width: 100%;
+  height: 100%;
+}
+.profile .profileFlex .infoBox .infoFlex .infoDetail .textFlex .github {
+  text-decoration: underline;
+}
+.profile .profileFlex .infoBox .infoFlex .infoRight {
+  width: 367px;
+  height: 207px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.profile .profileFlex .infoBox .infoFlex .infoRight .subTitle {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.profile .profileFlex .infoBox .infoFlex .infoRight .ma_bo {
+  margin-bottom: 10px;
+}
+.profile .profileFlex .aboutMe {
+  width: 754px;
+  height: 209px;
+  font-size: 20px;
+  padding: 42px 33px;
+}
+.profile .profileFlex .aboutMe .point {
+  color: #F2A65A;
+  font-weight: 600;
+}
+.profile .profileFlex .aboutMe .ma_bo {
+  margin-bottom: 20px;
+}
+
+/***************** skill ******************/
+.skill {
+  width: 1280px;
+  height: 100vh;
+}
+.skill .skillFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.skill .skillFlex:last-child {
+  margin-bottom: 0;
+}
+.skill .skillFlex .skillBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 20px;
+}
+.skill .skillFlex .skillBox .skillImg {
+  width: 50px;
+  height: 50px;
+}
+.skill .skillFlex .skillBox .skillImg img {
+  width: 100%;
+  height: 100%;
+}
+
+/***************** project ******************/
+.project {
+  width: 1280px;
+}
+.project .projectFlex {
+  width: 1084px;
+  height: 1146px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+.project .projectFlex .projectBox {
+  width: 522px;
+  height: 552px;
+  padding: 40px 45px 40px 30px;
+}
+.project .projectFlex .projectBox .projectName {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.project .projectFlex .projectBox .kioskMokupImg {
+  width: 240px;
+  height: 250px;
+  margin: 25px auto;
+}
+.project .projectFlex .projectBox .kioskMokupImg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.project .projectFlex .projectBox .mokupImg {
+  width: 375px;
+  height: 250px;
+  margin: 25px auto;
+}
+.project .projectFlex .projectBox .mokupImg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.project .projectFlex .projectBox .toolFlex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.project .projectFlex .projectBox .toolFlex .toolBox {
+  font-weight: 500;
+  padding: 10px 12px;
+  background-color: #F2A65A;
+  border-radius: 10px;
+  color: white;
+}
+.project .projectFlex .projectBox .ma-top {
+  margin-top: 0px;
+}
+.project .projectFlex #projectBaskin,
+.project .projectFlex #projectChae,
+.project .projectFlex #projectroom,
+.project .projectFlex #projectAir {
+  position: relative;
+}
+.project .projectFlex #projectBaskin:hover .projectOverlay,
+.project .projectFlex #projectChae:hover .projectOverlay,
+.project .projectFlex #projectroom:hover .projectOverlay,
+.project .projectFlex #projectAir:hover .projectOverlay {
+  opacity: 1;
+}
+.project .projectFlex #projectBaskin .projectOverlay,
+.project .projectFlex #projectChae .projectOverlay,
+.project .projectFlex #projectroom .projectOverlay,
+.project .projectFlex #projectAir .projectOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 522px;
+  height: 552px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.project .projectFlex #projectBaskin .projectOverlay .modalBtnBox .modalBtn,
+.project .projectFlex #projectChae .projectOverlay .modalBtnBox .modalBtn,
+.project .projectFlex #projectroom .projectOverlay .modalBtnBox .modalBtn,
+.project .projectFlex #projectAir .projectOverlay .modalBtnBox .modalBtn {
+  border: none;
+  border-radius: 10px;
+  background-color: #F2A65A;
+  padding: 15px 20px;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.project .projectFlex #projectBaskin .projectOverlay .modalBtnBox .modalBtn > a,
+.project .projectFlex #projectChae .projectOverlay .modalBtnBox .modalBtn > a,
+.project .projectFlex #projectroom .projectOverlay .modalBtnBox .modalBtn > a,
+.project .projectFlex #projectAir .projectOverlay .modalBtnBox .modalBtn > a {
+  font-size: 14px;
+  margin: 0;
+  color: white;
+}
+.project .projectFlex #projectBaskin .projectOverlay .modalBtnBox .modalBtn:hover,
+.project .projectFlex #projectChae .projectOverlay .modalBtnBox .modalBtn:hover,
+.project .projectFlex #projectroom .projectOverlay .modalBtnBox .modalBtn:hover,
+.project .projectFlex #projectAir .projectOverlay .modalBtnBox .modalBtn:hover {
+  background-color: rgb(228, 141, 55);
+  box-shadow: 0 2px 20px 0 rgba(242, 166, 90, 0.8);
+  backdrop-filter: blur(4px);
+}
+.project .projectFlex #projectBaskin .projectOverlay > a,
+.project .projectFlex #projectChae .projectOverlay > a,
+.project .projectFlex #projectroom .projectOverlay > a,
+.project .projectFlex #projectAir .projectOverlay > a {
+  font-size: 18px;
+  margin-top: 10px;
+  color: rgb(34, 75, 253);
+  text-decoration: underline;
+}
+
+/***************** fin ******************/
+.fin {
+  width: 1280px;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.fin .finTxt .fin_title {
+  font-size: 45px;
+  z-index: 10;
+}
+.fin .finTxt .fin_title .name {
+  font-size: 96px;
+  color: #F2A65A;
+}
+.fin .contactBox {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 70px;
+}
+.fin .contactBox .contactTitle {
+  font-size: 24px;
+  font-weight: 500;
+}
+.fin .contactBox .contactTxt {
+  font-size: 20px;
+}
+
+/***************** quickMenu ******************/
+.quickMenu {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: #F2A65A;
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.quickMenu.quickActive {
+  opacity: 1;
+}
+.quickMenu .quickTop {
+  width: 16px;
+  height: 10px;
+  margin: 0 auto;
+  line-height: 50px;
+}
+.quickMenu .quickTop img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.quickMenu:hover {
+  background-color: rgb(236, 189, 141);
+  box-shadow: 0 2px 20px 0 rgba(242, 166, 90, 0.5);
+  backdrop-filter: blur(4px);
+}/*# sourceMappingURL=main.css.map */
