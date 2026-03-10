@@ -401,15 +401,6 @@ section {
   box-shadow: 0 2px 20px 0 rgba(242, 166, 90, 0.8);
   backdrop-filter: blur(4px);
 }
-.project .projectFlex #projectBaskin .projectOverlay > a,
-.project .projectFlex #projectChae .projectOverlay > a,
-.project .projectFlex #projectroom .projectOverlay > a,
-.project .projectFlex #projectAir .projectOverlay > a {
-  font-size: 18px;
-  margin-top: 10px;
-  color: rgb(34, 75, 253);
-  text-decoration: underline;
-}
 
 /***************** fin ******************/
 .fin {
